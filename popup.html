@@ -1,0 +1,21 @@
+<div class="new_task col-xs-12" >
+					
+	<form ng-submit="addTask()">
+		<div class="new_tid col-xs-12">
+			<span class="col-xs-3" translate="taskID"> :</span>
+			<input type="text" class="col-xs-9" ng-model="new_taskid" ng-pattern="id_valid" required>
+		</div> <!-- new_tid ends -->
+						
+		<div class="new_name col-xs-12">
+			<span class="col-xs-3" translate="taskNAME"> :</span>
+			<input type="text" class="col-xs-9" ng-model="new_taskname" ng-pattern="name_valid" required>
+		</div> <!-- new_name ends -->
+		<div class="col-xs-3"></div>
+		<div class="col-xs-5">
+			<input type="submit" class="add_btn"  value="{{'addbtn'|translate}}">
+		</div>
+		<div class="col-xs-4">
+			<input type="reset" class="cancel_btn" ng-click="hideTask()" value="{{'Cancel'|translate}}">
+		</div>
+		</form>
+</div> <!-- new_task ends -->

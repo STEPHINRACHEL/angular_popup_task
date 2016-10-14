@@ -1,0 +1,10 @@
+{
+	"head":"My ToDo Application",
+	"addbtn":"Add",
+	"remove":"Remove",
+	"taskID":"Task ID",
+	"taskNAME":"Task Name",
+	"Cancel":"Cancel",
+	"Mark":"Mark Completed",
+	"remTask":"Remove Task"
+}

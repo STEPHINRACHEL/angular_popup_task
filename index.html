@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Angular ToDo</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body ng-app="myApp">
+    <div class="container-fluid">
+        <div class="wrapper col-xs-12">
+            <header>
+                <h1 translate="head"></h1>
+            </header>
+            <div class="col-xs-1"></div>
+            <div class="table_container col-xs-10" ng-controller="myController">
+                <div class="select_Lang col-xs-6">
+                    <select  ng-model="cur_lang" ng-change="setLang(cur_lang)">
+                        <option value="en" ng-selected="true">English</option>
+                        <option value="mal">Malayalam</option>
+                        <option value="kor">Korean</option>
+                    </select>
+                </div>
+                <div class="add_button">
+                    <a href="#" ng-click="add_item()" translate="addbtn"></a>
+                </div>
+                <!-- add_button ends -->
+                <table class="col-xs-12">
+                    <thead>
+                        <tr>
+                            <th class="col-xs-1">#</th>
+                            <th class="col-xs-2" translate="taskID"></th>
+                            <th class="col-xs-2" translate="taskNAME"></th>
+                            <th class="col-xs-4" translate="Mark"></th>
+                            <th class="col-xs-3" translate="remTask"></th>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="task in data | orderBy:'taskid'" ng-class="{table_color:check}">
+                        <tr>
+                            <td class="col-xs-1">{{$index+1}}</td>
+                            <td class="col-xs-2">{{task.taskid}}</td>
+                            <td class="col-xs-2">{{task.taskname}}</td>
+                            <td class="col-xs-4">
+                                <input type="checkbox" name="completed" ng-model="check">
+                            </td>
+                            <td class="col-xs-3"><a href="#" ng-click="remove(task.taskid)" translate="remove"></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- table_container ends -->
+            <div class="col-xs-1"></div>
+        </div>
+        <!-- wrapper ends -->
+    </div>
+    <!-- container-fluid ends -->
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    <script  src="node_modules/angular-translate/dist/angular-translate.min.js"></script>
+    <script  src="node_modules/angular-translate-loader-partial/angular-translate-loader-partial.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script  src="node_modules/angular-mocks/angular-mocks.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
